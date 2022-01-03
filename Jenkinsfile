@@ -2,15 +2,16 @@ pipeline
 {
   agent any
   stages {
-    stage ("git checkout"){
+    stage ("git checkout") {
       steps {
       git 'https://github.com/vignesh2612/Infraz.git'
     }
           }
-    stage {
+    stage ("maven build") {
       steps {
-        ("maven build")
       bat '''mvn clean install
+      }
+      }
       }
       }
       
